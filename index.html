@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width">
+    <title>FizzBuzz Project</title>
+    <style>
+        h2,
+        form,
+        div {
+            text-align: center;
+        }
+    </style>
+</head>
+<html>
+
+
+<body>
+    <h2>Check FizzBuzz Result!</h2>
+
+    <form>
+        <p>Please enter a number</p>
+        <input id="ipangka" type="number">
+        <button type="button" id="btn">Check</button>
+    </form>
+
+    <div id="container">
+    </div>
+</body>
+
+<script charset="utf-8">
+    var Result = [];
+
+    const hasil = document.getElementById("container");
+    const btn = document.querySelector('button');
+
+    btn.addEventListener('click', function () {
+        const input = document.getElementById("ipangka").value;
+
+        if (input < 1 || input > 100) {
+            console.log("Invalid Input");
+            Result.push("Invalid Input<br>");
+        } else if (input % 3 === 0 && input % 5 === 0) {
+            console.log("FizzBuzz");
+            Result.push("FizzBuzz<br>");
+        } else if (input % 3 === 0) {
+            console.log("Fizz");
+            Result.push("Fizz<br>");
+        } else if (input % 5 === 0) {
+            console.log("Buzz");
+            Result.push("Buzz<br>");
+        } else {
+            console.log(input);
+            Result.push(input);
+            Result.push("<br>");
+        }
+        hasil.innerHTML = Result;
+    })
+</script>
+
+</html>
